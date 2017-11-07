@@ -14,4 +14,4 @@
 .glide/
 
 # Project Binaries
-hello-world
+bin/*
