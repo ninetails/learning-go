@@ -1,10 +1,10 @@
 UID:=`id -u`
 GID:=`id -g`
 
-all: clean hello-world sandbox
+all: clean hello sandbox
 
-%: src/github.com/ninetails/learning-go/%.go
-	docker run --rm -u $(UID):$(GID) -v $(PWD):/go -w /go/src golang:latest go build -o /go/bin/$@ github.com/ninetails/learning-go/$@.go
+%: src/github.com/ninetails/%
+	docker run --rm -u $(UID):$(GID) -v $(PWD):/go -w /go/src golang:latest go build -o /go/bin/$@ github.com/ninetails/$@
 
 .PHONY: clean
 
